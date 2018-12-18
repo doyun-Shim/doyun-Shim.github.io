@@ -58,6 +58,10 @@ var game = new function(){
 	gameSelf.nextTurn = function(){
 		if (!game.isGameOver()){
 			game.getPlayerTurn().move(snakesAndLadders);
+			//한번더 위치일때 턴을 변경 안하게 할 수 있음.
+			// if(game.getPlayerTurn().getPosition() == position){
+				
+			// }
 			updateTurn();
 		}
 	}
@@ -165,6 +169,7 @@ var game = new function(){
 		
 		function InvokeCB(cb, arg)
 		{
+			console.log("cb",cb);
 		   for(var i=0;i<cb.length;i++)
 		   {
 			  if (cb[i]){cb[i](arg);}
